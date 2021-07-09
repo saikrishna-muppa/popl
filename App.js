@@ -31,10 +31,10 @@ export default function App() {
     headerShown: false
   }}>
     <Stack.Screen name="welcome" component={Welcome} />
-      {/* <Stack.Screen name="signup" component={Singup} /> */}
-      {/* <Stack.Screen name="Home" component={MainTab}  /> */}
-      {/* <Stack.Screen name="login" component={SignIn} /> */}
-      {/* <Stack.Screen name ="forgotpassword" component={Forgot_password}/> */}
+      <Stack.Screen name="signup" component={Singup} />
+      <Stack.Screen name="Home" component={MainTab}  />
+      <Stack.Screen name="login" component={SignIn} />
+      <Stack.Screen name ="forgotpassword" component={Forgot_password}/>
     </Stack.Navigator>
   </NavigationContainer>
   
