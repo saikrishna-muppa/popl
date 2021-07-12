@@ -10,35 +10,44 @@ import { createMaterialBottomTabNavigator } from '@react-navigation/material-bot
 import HomepageScreen from '../screens/HomepageScreen';
 import ScanScreen from '../screens/ScanScreen';
 import GraphScreen from '../screens/GraphScreen';
-
+import { Ionicons } from '@expo/vector-icons';
 import QrCodeScreen from '../screens/QrCodeScreen';
 import ProfileScreen from '../screens/ProfileScreen';
+
 
 const BuyPoplStack = createStackNavigator();
 const CompleteProfileStack = createStackNavigator();
 const Tab = createMaterialBottomTabNavigator();
-const BuyPoplStackScreen = ({ navigation }) => {
-	<BuyPoplStack.Navigator
-		screenOptions={{
-			headerStyle: {
-				backgroundColor: '#009387'
-			},
-			headerTintColor: '#fff',
-			// headerTitleStyle: {
-			// 	fontWeight: '700'
-			// }
-		}}
-	>
-		<BuyPoplStack.Screen
-			name="buy"
-			component={BuyPopl}
-			options={{ title: 'buy', headerLeft: () => <SimpleLineIcons name="menu" size={24} color="black" /> }}
-		/>
-	</BuyPoplStack.Navigator>;
-};
-const MainTab = () => {
+// const BuyPoplStackScreen = ({ navigation }) => {
+// 	<BuyPoplStack.Navigator
+// 		screenOptions={{
+// 			headerStyle: {
+// 				backgroundColor: '#009387'
+// 			},
+// 			headerTintColor: '#fff',
+// 			// headerTitleStyle: {
+// 			// 	fontWeight: '700'
+// 			// }
+// 		}}
+// 	>
+// 		<BuyPoplStack.Screen
+// 			name="buy"
+// 			component={BuyPopl}
+// 			options={{ title: 'buy', headerLeft: () => <SimpleLineIcons name="menu" size={24} color="black" /> }}
+// 		/>
+// 	</BuyPoplStack.Navigator>;
+// };
+const MainTab = ({ navigation }) => {
 	return (
-		<Tab.Navigator initialRouteName="homescreen" activeColor="black" barStyle={{ backgroundColor: '#fff' }}>
+		<Tab.Navigator style={styels.tab_navigator} initialRouteName="homescreen" activeColor="black" barStyle={{ backgroundColor: '#fff',shadowColor: "#000",
+		shadowOffset: {
+			width: 0,
+			height: 12,
+		},
+		shadowOpacity: 0.58,
+		shadowRadius: 16.00,
+		
+		elevation: 24, }}>
 			<Tab.Screen
 				name="homescreen"
 				component={HomepageScreen}
@@ -50,7 +59,9 @@ const MainTab = () => {
 				name="scanscreen"
 				component={ScanScreen}
 				options={{
-					tabBarIcon: ({ color }) => <MaterialIcons name="keyboard-arrow-right"style={styels.icon_size} size={24} color={color} />
+					tabBarIcon: ({ color }) => 
+					<Ionicons name="analytics-outline" style={styels.icon_size} size={24}   />
+					
 				}}
 			/>
 			<Tab.Screen
@@ -93,5 +104,6 @@ const styels = StyleSheet.create({
 	},
     icon_size:{
         height:100
-    }
+    },
+	
 });

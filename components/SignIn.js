@@ -22,13 +22,13 @@ const SignIn = ({ navigation }) => {
 	const passwordChangeHandler = (e) => {
 		setPassword(e);
 	};
-	const userDetails=()=>{
-		var obj=[...users];
-		obj.find((i)=> (
-			<Text>{i.id}</Text>
-		))
+		// const userDetails=()=>{
+		// 	var obj=[...users];
+		// 	obj.find((i)=> (
+		// 		<Text>{i.id}</Text>
+		// 	))
 
-	}
+		// }
 	
 		
 	const signInHandler = () => {
@@ -57,10 +57,7 @@ const SignIn = ({ navigation }) => {
 					<AntDesign style={styles.icons} name="google" size={24} color="black" />
 					<AntDesign style={styles.icons} name="facebook-square" size={24} color="black" />
 				</View>
-				<Text style={styles.header}>{
-		users.find((i)=> (
-			<Text>{i.id}</Text>
-		))}</Text>
+				
 				<Text style={styles.or_text}>OR</Text>
 				<Text style={styles.input_text_headers}>Input your email and password</Text>
 

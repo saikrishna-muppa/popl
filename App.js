@@ -15,6 +15,8 @@ import Homepage from './HomePage';
 import HeaderPage from './components/headerpage/HeaderPage';
 import { SimpleLineIcons } from '@expo/vector-icons';
 import HomepageScreen from './components/screens/HomepageScreen';
+import CompleteProfile from './components/tabs/CompleteProfile';
+import Set_up_Popl from './components/tabs/Set_up_Popl';
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
 export default function App() {
@@ -30,11 +32,17 @@ export default function App() {
     <Stack.Navigator style={styles.container} screenOptions={{
     headerShown: false
   }}>
+     {/* <Stack.Screen name="Home" component={MainTab}  /> */}
     <Stack.Screen name="welcome" component={Welcome} />
       <Stack.Screen name="signup" component={Singup} />
       <Stack.Screen name="Home" component={MainTab}  />
       <Stack.Screen name="login" component={SignIn} />
       <Stack.Screen name ="forgotpassword" component={Forgot_password}/>
+      {/* <Stack.Screen name ="homescreen" component={HomepageScreen}/>  */}
+      <Stack.Screen name ="profile" component={CompleteProfile}/> 
+      <Stack.Screen name ="setup" component={Set_up_Popl}/> 
+      {/* <Stack.Screen name ="header" component={HeaderPage}  />  */}
+           
     </Stack.Navigator>
   </NavigationContainer>
   
